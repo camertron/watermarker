@@ -26,15 +26,15 @@ public final class Main {
     public static void main(String[] args) {
         LaunchLog launchLog = new LaunchLog();
         Thread.setDefaultUncaughtExceptionHandler((thread, throwable) ->
-            launchLog.write("uncaught thread=" + thread.getName() + "\n" + stackTrace(throwable))
+            report(launchLog, "uncaught thread=" + thread.getName() + "\n" + stackTrace(throwable))
         );
 
         try {
             run(args, launchLog);
             launchLog.write("exit ok");
         } catch (Throwable throwable) {
-            launchLog.write("fatal\n" + stackTrace(throwable));
-            throwUnchecked(throwable);
+            report(launchLog, "fatal\n" + stackTrace(throwable));
+            System.exit(1);
         }
     }
 
@@ -168,16 +168,9 @@ public final class Main {
         return stringWriter.toString();
     }
 
-    private static void throwUnchecked(Throwable throwable) {
-        if (throwable instanceof RuntimeException runtimeException) {
-            throw runtimeException;
-        }
-
-        if (throwable instanceof Error error) {
-            throw error;
-        }
-
-        throw new RuntimeException(throwable);
+    private static void report(LaunchLog launchLog, String message) {
+        launchLog.write(message);
+        System.err.println(message);
     }
 
     private static final class LaunchLog {

@@ -1,9 +1,10 @@
 module Watermarker
   module Components
     class SettingsList < Component
-      BACKGROUND_COLOR = SWT::Color.new(39, 44, 45)
+      attr_reader :theme
 
-      def initialize
+      def initialize(theme:)
+        @theme = theme
         @items = []
       end
 
@@ -11,7 +12,7 @@ module Watermarker
         @composite = SWT::Composite.new(parent, SWT::Base.NONE)
 
         @composite.addListener(SWT::Base.Paint, Listener.new do |e|
-          e.gc.setBackground(BACKGROUND_COLOR)
+          e.gc.setBackground(theme.inputs_background_color)
           size = @composite.getSize
           e.gc.fillRoundRectangle(0, 0, size.x, size.y, 20, 20)
         end)
@@ -78,7 +79,7 @@ module Watermarker
 
         separator.addListener(SWT::Base.Paint, Listener.new do |e|
           area = e.widget.getClientArea
-          e.gc.setForeground(SWT::Color.new(49, 54, 55))
+          e.gc.setForeground(theme.inputs_separator_color)
           e.gc.drawLine(10, 0, area.width - 20, 0)
         end)
 

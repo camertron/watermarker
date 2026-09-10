@@ -1,11 +1,11 @@
 module Watermarker
   module Components
     class DropCanvas
-      BACKGROUND_COLOR = SWT::Color.new(33, 37, 39)
-      ACTIVE_BACKGROUND_COLOR = SWT::Color.new(20, 20, 20)
+      attr_reader :theme
 
-      def initialize
-        @background_color = BACKGROUND_COLOR
+      def initialize(theme:)
+        @theme = theme
+        @background_color = theme.background_color
         @on_files_received = []
       end
 
@@ -71,9 +71,9 @@ module Watermarker
 
       def active=(value)
         if value
-          @background_color = ACTIVE_BACKGROUND_COLOR
+          @background_color = theme.drop_target_active_color
         else
-          @background_color = BACKGROUND_COLOR
+          @background_color = theme.background_color
         end
 
         @canvas.redraw
@@ -94,7 +94,7 @@ module Watermarker
 
         gc.setLineStyle(SWT::Base.LINE_DASH)
         gc.setLineWidth(5)
-        gc.setForeground(SWT::Color.new(100, 100, 100))
+        gc.setForeground(theme.drop_target_border_color)
         gc.setBackground(@background_color)
         gc.fillRoundRectangle(20, 20, area.width - 40, area.height - 40, 20, 20)
         gc.drawRoundRectangle(20, 20, area.width - 40, area.height - 40, 20, 20)

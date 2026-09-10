@@ -35,7 +35,7 @@ require "runner"
 require "theme"
 
 display = SWT::Display.new
-theme = display.isSystemDarkTheme ? Watermarker::DarkTheme : Watermarker::LightTheme
+theme = SWT::Display.isSystemDarkTheme ? Watermarker::DarkTheme : Watermarker::LightTheme
 
 options = {
   text: "DRAFT",
@@ -66,7 +66,7 @@ begin
 
   progress_bar = nil
 
-  Watermarker::Components::DropCanvas.new.render_in(shell, shell) do |zone|
+  Watermarker::Components::DropCanvas.new(theme: theme).render_in(shell, shell) do |zone|
     zone.set_size(canvas_width, canvas_height)
 
     zone.on_files_received do |input_files|
@@ -128,7 +128,7 @@ begin
     end
   end
 
-  settings_list = Watermarker::Components::SettingsList.new
+  settings_list = Watermarker::Components::SettingsList.new(theme: theme)
   settings_list.render_in(shell, shell) do |settings_list|
     settings_list.set_location(15, canvas_height)
     settings_list.set_background(theme.background_color)
