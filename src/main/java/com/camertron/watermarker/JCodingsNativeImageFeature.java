@@ -1,4 +1,4 @@
-package com.example.trufflegui;
+package com.camertron.watermarker;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

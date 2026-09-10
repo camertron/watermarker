@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#! /usr/bin/env ruby
 # frozen_string_literal: true
 
 require "json"
@@ -7,7 +7,7 @@ require "open3"
 root = File.expand_path("..", __dir__)
 native_image_dir = File.join(
   root,
-  "src/main/resources/META-INF/native-image/com.example/truffle-gui-native"
+  "src/main/resources/META-INF/native-image/com.camertron/watermarker"
 )
 classpath_file = File.join(root, "target/classpath.txt")
 

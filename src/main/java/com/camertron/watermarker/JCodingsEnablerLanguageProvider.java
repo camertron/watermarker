@@ -1,4 +1,4 @@
-package com.example.trufflegui;
+package com.camertron.watermarker;
 
 import java.util.Collection;
 import java.util.List;

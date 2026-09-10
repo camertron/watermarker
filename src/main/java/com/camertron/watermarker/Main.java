@@ -1,4 +1,4 @@
-package com.example.trufflegui;
+package com.camertron.watermarker;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -67,7 +67,7 @@ public final class Main {
             context.getPolyglotBindings().putMember("projectRoot", projectRoot.toString());
             context.getPolyglotBindings().putMember(
                 "smokeExitMs",
-                System.getenv().getOrDefault("TRUFFLE_GUI_SMOKE_EXIT_MS", "")
+                System.getenv().getOrDefault("WATERMARKER_SMOKE_EXIT_MS", "")
             );
 
             Source source = Source.newBuilder("ruby", script.contents(), script.name()).build();
@@ -130,15 +130,6 @@ public final class Main {
             return readScript(path);
         }
 
-        String configuredScript = System.getenv("TRUFFLE_GUI_SCRIPT");
-        if (configuredScript != null && !configuredScript.isBlank()) {
-            Path path = Path.of(configuredScript);
-            if (!path.isAbsolute()) {
-                path = projectRoot.resolve(path);
-            }
-            return readScript(path);
-        }
-
         Path[] candidates = {
             projectRoot.resolve("app.rb"),
             projectRoot.resolve("src/main/ruby/app.rb"),
@@ -151,7 +142,7 @@ public final class Main {
             }
         }
 
-        throw new IOException("Could not find Ruby entrypoint. Set TRUFFLE_GUI_SCRIPT or place app.rb beside Gemfile.");
+        throw new IOException("Could not find Ruby entrypoint.");
     }
 
     private static RubyScript readScript(Path path) throws IOException {

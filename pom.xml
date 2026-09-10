@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
-  <artifactId>truffle-gui-native</artifactId>
+  <artifactId>watermarker</artifactId>
   <version>0.1.0-SNAPSHOT</version>
 
   <properties>
@@ -13,7 +13,7 @@
     <maven.compiler.release>24</maven.compiler.release>
     <graalvm.version>25.0.0</graalvm.version>
     <swt.version>3.134.0</swt.version>
-    <main.class>com.example.trufflegui.Main</main.class>
+    <main.class>com.camertron.watermarker.Main</main.class>
   </properties>
 
   <dependencies>
@@ -58,15 +58,15 @@
         <version>0.10.4</version>
         <extensions>true</extensions>
         <configuration>
-          <imageName>truffle-gui-native</imageName>
+          <imageName>watermarker</imageName>
           <mainClass>${main.class}</mainClass>
           <buildArgs>
             <buildArg>-H:+ReportExceptionStackTraces</buildArg>
             <buildArg>-Os</buildArg>
             <buildArg>--add-opens=org.graalvm.truffle/com.oracle.truffle.polyglot=ALL-UNNAMED</buildArg>
             <buildArg>--add-opens=org.graalvm.truffle/com.oracle.truffle.api.strings=ALL-UNNAMED</buildArg>
-            <buildArg>--features=com.example.trufflegui.JCodingsNativeImageFeature</buildArg>
-            <buildArg>--initialize-at-build-time=com.example.trufflegui.JCodingsEnablerLanguageProvider</buildArg>
+            <buildArg>--features=com.camertron.watermarker.JCodingsNativeImageFeature</buildArg>
+            <buildArg>--initialize-at-build-time=com.camertron.watermarker.JCodingsEnablerLanguageProvider</buildArg>
             <buildArg>-Dpolyglot.engine.WarnInterpreterOnly=false</buildArg>
           </buildArgs>
         </configuration>

@@ -1,4 +1,4 @@
-package com.example.trufflegui;
+package com.camertron.watermarker;
 
 import com.oracle.truffle.api.TruffleLanguage;
 

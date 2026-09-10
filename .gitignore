@@ -3,3 +3,4 @@ target/
 .graalvm/
 vendor/bundle/
 .DS_Store
+Watermarker.app/
