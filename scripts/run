@@ -15,5 +15,5 @@ exec java \
   -XstartOnFirstThread \
   -Dpolyglot.engine.WarnInterpreterOnly=false \
   -cp "target/classes:$classpath" \
-  com.example.trufflegui.Main \
+  com.camertron.watermarker.Main \
   "$@"
