@@ -1,0 +1,547 @@
+[
+  {
+    "name": "java.lang.Boolean",
+    "methods": [
+      {
+        "name": "getBoolean",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "java.lang.Class",
+    "methods": [
+      {
+        "name": "getClassLoader",
+        "parameterTypes": [
+
+        ]
+      }
+    ]
+  },
+  {
+    "name": "java.lang.ClassLoader",
+    "methods": [
+      {
+        "name": "loadClass",
+        "parameterTypes": [
+          "java.lang.String"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "java.lang.Throwable",
+    "methods": [
+      {
+        "name": "addSuppressed",
+        "parameterTypes": [
+          "java.lang.Throwable"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jdk.internal.loader.ClassLoaders$AppClassLoader"
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.CGAffineTransform",
+    "fields": [
+      {
+        "name": "a"
+      },
+      {
+        "name": "b"
+      },
+      {
+        "name": "c"
+      },
+      {
+        "name": "d"
+      },
+      {
+        "name": "tx"
+      },
+      {
+        "name": "ty"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.CGPathElement",
+    "fields": [
+      {
+        "name": "type"
+      },
+      {
+        "name": "points"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.CGPoint",
+    "fields": [
+      {
+        "name": "x"
+      },
+      {
+        "name": "y"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.CGRect",
+    "fields": [
+      {
+        "name": "origin"
+      },
+      {
+        "name": "size"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.CGSize",
+    "fields": [
+      {
+        "name": "width"
+      },
+      {
+        "name": "height"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.NSAffineTransformStruct",
+    "fields": [
+      {
+        "name": "m11"
+      },
+      {
+        "name": "m12"
+      },
+      {
+        "name": "m21"
+      },
+      {
+        "name": "m22"
+      },
+      {
+        "name": "tX"
+      },
+      {
+        "name": "tY"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.NSOperatingSystemVersion",
+    "fields": [
+      {
+        "name": "majorVersion"
+      },
+      {
+        "name": "minorVersion"
+      },
+      {
+        "name": "patchVersion"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.NSPoint",
+    "fields": [
+      {
+        "name": "x"
+      },
+      {
+        "name": "y"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.NSRange",
+    "fields": [
+      {
+        "name": "location"
+      },
+      {
+        "name": "length"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.NSRect",
+    "fields": [
+      {
+        "name": "x"
+      },
+      {
+        "name": "y"
+      },
+      {
+        "name": "width"
+      },
+      {
+        "name": "height"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.NSSize",
+    "fields": [
+      {
+        "name": "width"
+      },
+      {
+        "name": "height"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.internal.cocoa.objc_super",
+    "fields": [
+      {
+        "name": "receiver"
+      },
+      {
+        "name": "super_class"
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.accessibility.SWTAccessibleDelegate",
+    "methods": [
+      {
+        "name": "accessibleProc",
+        "parameterTypes": [
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "accessibleProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "accessibleProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.browser.WebKit",
+    "methods": [
+      {
+        "name": "browserProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "browserProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "browserProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "browserProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "browserProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.dnd.DragSource",
+    "methods": [
+      {
+        "name": "dragSourceProc",
+        "parameterTypes": [
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "dragSourceProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "dragSourceProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "dragSourceProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "dragSourceProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.dnd.DropTarget",
+    "methods": [
+      {
+        "name": "dropTargetProc",
+        "parameterTypes": [
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "dropTargetProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "dropTargetProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.graphics.TextLayout",
+    "methods": [
+      {
+        "name": "textLayoutProc",
+        "parameterTypes": [
+          "long",
+          "long"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.printing.PrintDialog",
+    "methods": [
+      {
+        "name": "dialogProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "org.eclipse.swt.widgets.Display",
+    "methods": [
+      {
+        "name": "cursorSetProc",
+        "parameterTypes": [
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "observerProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "sourceProc",
+        "parameterTypes": [
+          "int"
+        ]
+      },
+      {
+        "name": "timerProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "applicationProc",
+        "parameterTypes": [
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "applicationProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "applicationProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "applicationProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "dialogProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "dialogProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "dialogProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "windowProc",
+        "parameterTypes": [
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "windowProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "windowProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "windowProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      },
+      {
+        "name": "windowProc",
+        "parameterTypes": [
+          "long",
+          "long",
+          "long",
+          "long",
+          "long",
+          "long"
+        ]
+      }
+    ]
+  }
+]

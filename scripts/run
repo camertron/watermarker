@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+set -eu
+
+. "$(dirname "$0")/env.sh"
+
+mvn -q compile dependency:build-classpath -Dmdep.outputFile=target/classpath.txt
+
+classpath="$(cat target/classpath.txt)"
+extra_java_args="${EXTRA_JAVA_ARGS:-}"
+
+# Intentional word splitting lets EXTRA_JAVA_ARGS carry JVM flags for probes.
+exec java \
+  $extra_java_args \
+  --enable-native-access=ALL-UNNAMED \
+  -XstartOnFirstThread \
+  -Dpolyglot.engine.WarnInterpreterOnly=false \
+  -cp "target/classes:$classpath" \
+  com.example.trufflegui.Main \
+  "$@"

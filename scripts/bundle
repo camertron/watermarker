@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+rm -rf Watermarker2.app
+mkdir -p Watermarker2.app/Contents/MacOS/
+cp target/truffle-gui-native Watermarker2.app/Contents/MacOS/Watermarker
+mkdir -p Watermarker2.app/Contents/Resources/
+cp -R src/main/ruby/ Watermarker2.app/Contents/Resources/
+cp Gemfile Watermarker2.app/Contents/Resources/
+cp Gemfile.lock Watermarker2.app/Contents/Resources/
+cp Watermarker.icns Watermarker2.app/Contents/Resources/
+cp Info.plist Watermarker2.app/Contents/
+
+pushd Watermarker2.app/Contents/Resources
+BUNDLE_PATH=./vendor/bundle bundle install
+BUNDLE_PATH=./vendor/bundle bundle exec ruby -rjson -e "puts Gem.loaded_specs.each_value.flat_map(&:full_require_paths).select { |path| path.start_with?(Dir.getwd) }.map { |path| path.delete_prefix(Dir.getwd + '/') }.to_json" > bundle_paths.json
+popd
+
+find Watermarker2.app/Contents/Resources/vendor/bundle -type f -name '*.o' -delete
+xattr -cr Watermarker2.app
+
+codesign --force --sign - --identifier com.camertron.watermarker Watermarker2.app/Contents/MacOS/Watermarker
+while IFS= read -r -d '' native_extension; do
+  codesign --force --sign - "$native_extension"
+done < <(find Watermarker2.app -type f \( -name '*.bundle' -o -name '*.dylib' \) -print0)
+
+codesign --force --sign - --identifier com.camertron.watermarker Watermarker2.app
+codesign --verify --deep --strict --verbose=4 Watermarker2.app

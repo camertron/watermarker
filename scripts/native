@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+set -eu
+
+script_dir="$(CDPATH= cd -- "$(dirname "$0")" && pwd)"
+. "$script_dir/env.sh"
+cd "$script_dir/.."
+
+if ! command -v native-image >/dev/null 2>&1; then
+  echo "native-image is not on PATH. Install a GraalVM JDK with Native Image and rerun this script." >&2
+  exit 127
+fi
+
+"$script_dir/generate-swt-native-metadata"
+
+exec mvn -DskipTests native:compile

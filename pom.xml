@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>truffle-gui-native</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>24</maven.compiler.release>
+    <graalvm.version>25.0.0</graalvm.version>
+    <swt.version>3.134.0</swt.version>
+    <main.class>com.example.trufflegui.Main</main.class>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.graalvm.polyglot</groupId>
+      <artifactId>polyglot</artifactId>
+      <version>${graalvm.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.graalvm.truffle</groupId>
+      <artifactId>truffle-api</artifactId>
+      <version>${graalvm.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.graalvm.polyglot</groupId>
+      <artifactId>ruby</artifactId>
+      <version>${graalvm.version}</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.platform</groupId>
+      <artifactId>org.eclipse.swt.cocoa.macosx.aarch64</artifactId>
+      <version>${swt.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+      </plugin>
+      <plugin>
+        <groupId>org.graalvm.buildtools</groupId>
+        <artifactId>native-maven-plugin</artifactId>
+        <version>0.10.4</version>
+        <extensions>true</extensions>
+        <configuration>
+          <imageName>truffle-gui-native</imageName>
+          <mainClass>${main.class}</mainClass>
+          <buildArgs>
+            <buildArg>-H:+ReportExceptionStackTraces</buildArg>
+            <buildArg>-Os</buildArg>
+            <buildArg>--add-opens=org.graalvm.truffle/com.oracle.truffle.polyglot=ALL-UNNAMED</buildArg>
+            <buildArg>--add-opens=org.graalvm.truffle/com.oracle.truffle.api.strings=ALL-UNNAMED</buildArg>
+            <buildArg>--features=com.example.trufflegui.JCodingsNativeImageFeature</buildArg>
+            <buildArg>--initialize-at-build-time=com.example.trufflegui.JCodingsEnablerLanguageProvider</buildArg>
+            <buildArg>-Dpolyglot.engine.WarnInterpreterOnly=false</buildArg>
+          </buildArgs>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -1,0 +1,18 @@
+{
+  "resources": {
+    "includes": [
+      {
+        "pattern": "\\Qorg/eclipse/swt/internal/Library.class\\E"
+      },
+      {
+        "pattern": "\\Qlibswt-cocoa-4973r12.jnilib\\E"
+      },
+      {
+        "pattern": "\\Qlibswt-pi-cocoa-4973r12.jnilib\\E"
+      },
+      {
+        "pattern": "\\Qlibswt-awt-cocoa-4973r12.jnilib\\E"
+      }
+    ]
+  }
+}
