@@ -32,7 +32,7 @@ You should now be able to run the app via:
 scripts/run
 ```
 
-That will launch the app and let you play around with it. Try dragging a .pdf file onto the drop zone. It should spit out a "<original file name>-watermarked.pdf" file next to the original.
+That will launch the app and let you play around with it. Try dragging a .pdf file onto the drop zone. It should spit out a "*-watermarked.pdf" file next to the original.
 
 ## Releasing
 
