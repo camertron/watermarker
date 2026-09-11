@@ -8,7 +8,7 @@ Watermarker is a neat little MacOS app that watermarks .pdf files. It's written 
 
 If all you want to do is _use_ the Watermarker app, head over to the [releases](https://github.com/camertron/watermarker/releases) page and download it.
 
-If you want to run it on your own laptop, then follow the instructions below.
+If you want to build it on your own computer, then follow the instructions below.
 
 ## Local Development
 
